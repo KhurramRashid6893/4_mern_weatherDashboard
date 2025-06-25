@@ -1,0 +1,266 @@
+/* src/css/NotFound.css */
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-scene {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.cloud {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 
+    20px -15px 0 0 #fff,
+    -20px -15px 0 0 #fff,
+    0 0 0 30px #fff;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cloud::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 60px;
+}
+
+.eye {
+  position: absolute;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background: #333;
+  border-radius: 50%;
+  animation: blink 4s infinite;
+}
+
+.eye.left {
+  left: 20px;
+}
+
+.eye.right {
+  right: 20px;
+}
+
+.mouth {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 20px;
+  border-bottom: 4px solid #333;
+  border-radius: 0 0 50% 50%;
+}
+
+.rain {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  height: 150px;
+}
+
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 3px;
+  height: 20px;
+  background: #3498db;
+  border-radius: 0 0 5px 5px;
+  animation: rain 1.5s linear infinite;
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0) rotate(10deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(250px) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to top, #8B4513, #A0522D);
+  border-radius: 50% 50% 0 0;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  z-index: 10;
+}
+
+.error-code {
+  font-size: 8rem;
+  margin: 0;
+  color: #2c3e50;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  line-height: 1;
+}
+
+.error-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  font-size: 1.3rem;
+  color: #34495e;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-button, .search-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-button {
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  color: white;
+}
+
+.search-button {
+  background: linear-gradient(to right, #3498db, #1a5276);
+  color: white;
+}
+
+.home-button:hover, .search-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button-icon {
+  font-size: 1.4rem;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -15px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+@keyframes blink {
+  0%, 45%, 55%, 100% { height: 15px; }
+  50% { height: 2px; top: 23px; }
+}
+
+/* Raindrop positions */
+.drop:nth-child(1) { left: 5%; animation-delay: 0s; }
+.drop:nth-child(2) { left: 15%; animation-delay: 0.3s; }
+.drop:nth-child(3) { left: 25%; animation-delay: 0.6s; }
+.drop:nth-child(4) { left: 35%; animation-delay: 0.2s; }
+.drop:nth-child(5) { left: 45%; animation-delay: 0.8s; }
+.drop:nth-child(6) { left: 55%; animation-delay: 0.1s; }
+.drop:nth-child(7) { left: 65%; animation-delay: 0.4s; }
+.drop:nth-child(8) { left: 75%; animation-delay: 0.7s; }
+.drop:nth-child(9) { left: 85%; animation-delay: 0.5s; }
+.drop:nth-child(10) { left: 95%; animation-delay: 0.9s; }
+/* Add more positions for the remaining drops */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 6rem;
+  }
+  
+  .error-title {
+    font-size: 2rem;
+  }
+  
+  .error-message {
+    font-size: 1.1rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weather-scene {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-code {
+    font-size: 4rem;
+  }
+  
+  .error-title {
+    font-size: 1.6rem;
+  }
+  
+  .home-button, .search-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .weather-scene {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .cloud {
+    width: 150px;
+    height: 60px;
+  }
+}

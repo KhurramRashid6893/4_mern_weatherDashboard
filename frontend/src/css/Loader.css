@@ -1,0 +1,126 @@
+/* src/css/Loader.css */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 2rem;
+}
+
+.weather-loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ffde33, #ff8c00);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.cloud {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 40px;
+  height: 20px;
+  background: #f0f8ff;
+  border-radius: 50px;
+  box-shadow: 
+    20px -5px 0 5px #f0f8ff,
+    -10px -10px 0 10px #f0f8ff;
+  animation: float 4s infinite ease-in-out;
+}
+
+.cloud::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background: #f0f8ff;
+  border-radius: 50%;
+}
+
+.loader-text {
+  color: #3498db;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeInOut 2s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { 
+    transform: translate(-50%, -50%) scale(0.9);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(0.9);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+  }
+}
+
+@keyframes float {
+  0% { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% { 
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  51% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .weather-loader {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .sun {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .loader-text {
+    font-size: 1.1rem;
+  }
+}

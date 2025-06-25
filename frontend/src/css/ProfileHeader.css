@@ -1,0 +1,169 @@
+/* src/css/ProfileHeader.css */
+.profile-header {
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(24, 90, 157, 0.2);
+}
+
+.weather-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 180px;
+}
+
+.sun {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ffde33, #ff8c00);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
+  animation: pulse 4s infinite ease-in-out;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.cloud1 {
+  top: 20px;
+  right: 100px;
+  width: 40px;
+  height: 20px;
+  box-shadow: 
+    15px -5px 0 5px rgba(255, 255, 255, 0.9),
+    -5px -10px 0 10px rgba(255, 255, 255, 0.9);
+  animation: float 8s infinite ease-in-out;
+}
+
+.cloud2 {
+  top: 50px;
+  right: 50px;
+  width: 30px;
+  height: 15px;
+  box-shadow: 
+    10px -3px 0 3px rgba(255, 255, 255, 0.8),
+    -3px -7px 0 7px rgba(255, 255, 255, 0.8);
+  animation: float 10s infinite ease-in-out;
+  animation-delay: 1s;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+}
+
+.welcome-title {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-emoji {
+  font-size: 2.5rem;
+  margin-right: 15px;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+.user-name {
+  color: #fffb8f;
+  margin-left: 10px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-message {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 90%;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 140, 0, 0.6); }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255, 140, 0, 0.8); }
+  100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 140, 0, 0.6); }
+}
+
+@keyframes float {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-header {
+    padding: 1.5rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .weather-animation {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .sun {
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .welcome-title {
+    font-size: 1.8rem;
+  }
+  
+  .welcome-message {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-header {
+    padding: 1.2rem;
+  }
+  
+  .weather-animation {
+    display: none;
+  }
+  
+  .welcome-title {
+    font-size: 1.6rem;
+  }
+  
+  .welcome-emoji {
+    font-size: 2rem;
+  }
+}

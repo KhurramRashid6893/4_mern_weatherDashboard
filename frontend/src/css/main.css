@@ -1,0 +1,100 @@
+/* src/css/main.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #e0f7fa, #f5f7fa);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favorite-button-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.favorite-button {
+  background: linear-gradient(to right, #ffd700, #ffaa00);
+  color: #2c3e50;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 170, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.favorite-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 170, 0, 0.4);
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+}
+
+.favorite-button:active {
+  transform: translateY(1px);
+}
+
+.button-icon {
+  font-size: 1.3rem;
+}
+
+.app-footer {
+  background: linear-gradient(to right, #185a9d, #43cea2);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .favorite-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-footer {
+    padding: 1rem;
+  }
+  
+  .footer-content {
+    font-size: 0.9rem;
+  }
+}

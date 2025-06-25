@@ -1,0 +1,73 @@
+/* src/css/Home.css */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #e0f7fa, #f5f7fa);
+  min-height: calc(100vh - 80px); /* Adjust based on your header height */
+}
+
+.weather-results {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.favorite-button {
+  background: linear-gradient(to right, #ffd700, #ffaa00);
+  color: #2c3e50;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 170, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.favorite-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 170, 0, 0.4);
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+}
+
+.favorite-button:active {
+  transform: translateY(1px);
+}
+
+.button-icon {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.favorite-button:hover .button-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .favorite-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-results {
+    margin-top: 1rem;
+  }
+}

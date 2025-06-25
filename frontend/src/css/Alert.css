@@ -1,0 +1,116 @@
+/* src/css/Alert.css */
+.alert-container {
+  border-radius: 12px;
+  border: 1px solid;
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  animation: slideIn 0.5s ease-out;
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.alert-emoji {
+  font-size: 1.8rem;
+}
+
+.alert-title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  flex-grow: 1;
+}
+
+.alert-icon {
+  font-size: 1.4rem;
+}
+
+.alert-message {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  padding-right: 1.5rem;
+}
+
+.alert-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform-origin: left;
+  animation: progressBar 3s linear forwards;
+}
+
+/* Success specific styling */
+.bg-green-50 {
+  background: linear-gradient(to right, #f0fff4, #e6fffa);
+  border-color: #c6f6d5;
+}
+
+.bg-green-50 .alert-progress {
+  background: linear-gradient(to right, #48bb78, #38a169);
+}
+
+.text-green-800 {
+  color: #2f855a;
+}
+
+/* Error specific styling */
+.bg-red-50 {
+  background: linear-gradient(to right, #fff5f5, #fffaf0);
+  border-color: #fed7d7;
+}
+
+.bg-red-50 .alert-progress {
+  background: linear-gradient(to right, #e53e3e, #c53030);
+}
+
+.text-red-800 {
+  color: #c53030;
+}
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes progressBar {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .alert-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .alert-emoji {
+    font-size: 1.5rem;
+  }
+  
+  .alert-title {
+    font-size: 1.2rem;
+  }
+}
