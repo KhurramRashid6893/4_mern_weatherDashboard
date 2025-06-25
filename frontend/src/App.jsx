@@ -37,7 +37,8 @@ function App() {
   const handleSearch = async (city) => {
     try {
       setLoading(true);
-      const res = await fetch(`http://localhost:5000/api/weather/${city}`);
+      //const res = await fetch(`http://localhost:5000/api/weather/${city}`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/weather/${city}`);
       const data = await res.json();
 
       if (res.ok) {
